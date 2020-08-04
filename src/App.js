@@ -488,7 +488,7 @@ const styles = {
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    width: '250px',
+    width: '400px',
     height: '250px',
     fontSize: '2em',
     fontFamily: 'Avenir',
