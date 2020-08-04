@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import profilePhoto from './assets/facePhoto.jpg';
+import logoJl from './assets/logo_jl.svg';
 
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
@@ -73,29 +74,30 @@ class App extends React.Component {
         color: 'black',
         backgroundColor: 'white',
         width: '100%',
+        display: 'flex',
         paddingTop: '1%',
         paddingBottom: '1%',
-        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        flexWrap: 'wrap'
       }}>
         <div style={{
-          marginRight: '5%',
           fontFamily: 'Avenir',
           fontWeight: 'bold',
-          fontSize: '1.5em',
-          color:'rgb(60, 157, 155, 0.8)'
+          color:'rgb(60, 157, 155, 0.8)',
+          flex: 1,
+          marginLeft: '2%',
         }}>
-          JOSEPH LEE'S PORTFOLIO
+          <img alt='alt' src={ logoJl } style={{ width: '40px' }} />
         </div>
         <div style={{
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'row',
-          width: 315,
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          flex: 1,
+          justifyContent: 'flex-end',
+          marginRight: "2%"
         }}>
           <a href="#aboutme" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
             ABOUT ME
@@ -234,7 +236,7 @@ class App extends React.Component {
   _pageHome() {
     return( <div>{ this._stickyHeader() }
             { this._headerUnderline() }
-            { this._body() }
+            { /* this._body() */}
             { this._projects() }
             { this._contact() }
           </div>);
