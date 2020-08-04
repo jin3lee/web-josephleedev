@@ -70,9 +70,9 @@ class App extends React.Component {
   _stickyHeader() {
     return (
       <div style={{
-        position: 'sticky',
+        position: 'fixed',
         color: 'black',
-        backgroundColor: 'white',
+        backgroundColor: 'rgb(0,0,0,0)',
         width: '100%',
         display: 'flex',
         paddingTop: '1%',
@@ -88,7 +88,7 @@ class App extends React.Component {
           flex: 1,
           marginLeft: '2%',
         }}>
-          <img alt='alt' src={ logoJl } style={{ width: '40px' }} />
+          <a href="josephleedev.com" ><img alt='alt' src={ logoJl } style={{ width: '40px' }} /></a>
         </div>
         <div style={{
           display: 'flex',
