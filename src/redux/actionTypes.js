@@ -1,0 +1,4 @@
+export const PAGE_ID_HOME = 'PAGE_ID_HOME';
+export const PAGE_ID_PROJECT_DETAIL = 'PAGE_ID_PROJECT_DETAIL';
+export const UPDATE_PAGE = 'UPDATE_PAGE';
+export const UPDATE_PROJECT_ID = 'UPDATE_PROJECT_ID';
