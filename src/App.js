@@ -88,7 +88,7 @@ class App extends React.Component {
           flex: 1,
           marginLeft: '2%',
         }}>
-          <a href="josephleedev.com" ><img alt='alt' src={ logoJl } style={{ width: '40px' }} /></a>
+          <a href="/" ><img alt='alt' src={ logoJl } style={{ width: '40px' }} /></a>
         </div>
         <div style={{
           display: 'flex',
