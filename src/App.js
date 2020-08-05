@@ -46,7 +46,6 @@ class App extends React.Component {
     document.body.style = 'background: white;';
     this._body = this._body.bind(this);
     this._stickyHeader = this._stickyHeader.bind(this);
-    this._headerUnderline = this._headerUnderline.bind(this);
     this._goToWebsite = this._goToWebsite.bind(this);
     this._updatePageTo = this._updatePageTo.bind(this);
   }
@@ -98,24 +97,13 @@ class App extends React.Component {
           justifyContent: 'flex-end',
           marginRight: '4.5%',
         }}>
+          <a href="#projects" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
+            WORK
+          </a>
           <a href="#aboutme" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
             ABOUT ME
           </a>
-          <a href="#projects" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
-            PROJECTS
-          </a>
-          <a href="#contact" style={ { ...styles.tabColorStyle, ...styles.headerButtonStyle } }>
-            CONTACT
-          </a>
         </div>
-      </div>
-    );
-  }
-
-  _headerUnderline() {
-    return (
-      <div style={{ color: 'rgb(50,50,50,.1)', backgroundColor: 'rgb(50,50,50,.1)', width: '100%', flex:1, height: '1%'}}>
-
       </div>
     );
   }
@@ -231,10 +219,9 @@ class App extends React.Component {
 
   _pageHome() {
     return( <div>{ this._stickyHeader() }
-            { this._headerUnderline() }
             { /* this._body() */}
             { this._projects() }
-            { this._contact() }
+            { /* this._contact() */ }
           </div>);
   }
 
@@ -455,15 +442,13 @@ const styles = {
   },
   tabColorStyle: {
     color: 'gray',
-    fontWeight: 'bold',
     fontSize: 14,
-  },
-  tabColorStyle: {
-    backgroundColor: 'yellow',
+    "hover": {
+     color: "#efefef"
+   }
   },
   headerButtonStyle: {
-    backgroundColor: 'rgb(0,0,0,0)',
-    border: '0px solid rgb(57, 74, 109, 0.8)',
+    textDecoration: 'none',
   },
   spacesBetweenTabStyle: {
     marginRight: '2%',
