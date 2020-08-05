@@ -498,6 +498,7 @@ const styles = {
     textAlign: 'center',
     border: 'none',
     marginTop: '2%',
+    cursor: 'pointer',
   },
 };
 
