@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import profilePhoto from './assets/facePhoto.jpg';
-import logoJl from './assets/logo_jl.svg';
+import logoJl from './assets/logo_jl_final.svg';
 
 import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
@@ -72,12 +72,10 @@ class App extends React.Component {
     return (
       <div style={{
         position: 'fixed',
-        color: 'black',
         backgroundColor: 'rgb(0,0,0,0)',
         width: '100%',
         display: 'flex',
-        paddingTop: '1%',
-        paddingBottom: '1%',
+        paddingTop: '4%',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -87,7 +85,7 @@ class App extends React.Component {
           fontWeight: 'bold',
           color:'rgb(60, 157, 155, 0.8)',
           flex: 1,
-          marginLeft: '2%',
+          marginLeft: '4.5%',
         }}>
           <a href="/" ><img alt='alt' src={ logoJl } style={{ width: '40px' }} /></a>
         </div>
@@ -98,7 +96,7 @@ class App extends React.Component {
           flexWrap: 'wrap',
           flex: 1,
           justifyContent: 'flex-end',
-          marginRight: "2%"
+          marginRight: '4.5%',
         }}>
           <a href="#aboutme" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
             ABOUT ME
@@ -190,8 +188,6 @@ class App extends React.Component {
 
   _projects() {
     return(<div id='projects' style={{ color: 'black', backgroundColor: 'rgb(255,255,255, 0.5)', paddingTop: '5%', paddingBottom: '5%', flexDirection: 'column'}}>
-
-      <h2 style={{ display:'flex', justifyContent:'center', fontFamily: 'avenir', fontSize: '2em', color:'rgb(60, 157, 155, 0.8)' }}>PROJECTS</h2>
 
       <div>
         <div style={{ paddingBottom: '10%', paddingTop: '5%',
@@ -458,16 +454,19 @@ const styles = {
     width: '100%',
   },
   tabColorStyle: {
-    color: 'rgb(57, 74, 109, 0.8)',
+    color: 'gray',
     fontWeight: 'bold',
-    fontSize: 14
+    fontSize: 14,
+  },
+  tabColorStyle: {
+    backgroundColor: 'yellow',
   },
   headerButtonStyle: {
     backgroundColor: 'rgb(0,0,0,0)',
     border: '0px solid rgb(57, 74, 109, 0.8)',
   },
   spacesBetweenTabStyle: {
-    marginRight: '8%',
+    marginRight: '2%',
   },
   cardFieldColorStyle: {
     color: 'rgb(60, 157, 155, 0.8)',
