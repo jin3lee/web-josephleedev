@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import profilePhoto from './assets/facePhoto.jpg';
 import logoJl from './assets/logo_jl.svg';
 
+import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
 import lgBoxshotsDesign from './assets/web_lg_design.png';
@@ -197,9 +198,8 @@ class App extends React.Component {
                       display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-evenly'
                     }}>
 
-          <button onClick={ () => { this._goToProjectPage(5) }} style={ styles.portfolioItem }>
-            Legacy Games
-          </button>
+          <img src={ lgPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(5) }} />
+
           <button onClick={ () => { this._goToProjectPage(1) }} style={ styles.portfolioItem }>
             IBCUNI
           </button>
