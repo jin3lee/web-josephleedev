@@ -5,6 +5,8 @@ import profilePhoto from './assets/facePhoto.jpg';
 import logoJl from './assets/logo_jl_final.svg';
 
 import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
+import ibcuPortfolioItem from './assets/web_ibcu_portfolioItem.jpg'
+
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
 import lgBoxshotsDesign from './assets/web_lg_design.png';
@@ -184,9 +186,8 @@ class App extends React.Component {
 
           <img src={ lgPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(5) }} />
 
-          <button onClick={ () => { this._goToProjectPage(1) }} style={ styles.portfolioItem }>
-            IBCUNI
-          </button>
+          <img src={ ibcuPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(1) }} />
+
           <button onClick={() => { this._goToProjectPage(2) }} style={ styles.portfolioItem }>
             Dodge It! Car!
           </button>
