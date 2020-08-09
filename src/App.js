@@ -184,19 +184,35 @@ class App extends React.Component {
                       display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-evenly'
                     }}>
 
-          <img src={ lgPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(5) }} />
+          <div style={ styles.portfolioItemContainer }>
+            <div style={ styles.portfolioItemDescription }>
+              <div>LegacyGames.com</div>
+              <div style={ styles.portfolioItemSubTitle }>Wordpress</div>
+            </div>
+            <img src={ lgPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(5) }} />
+          </div>
 
-          <img src={ ibcuPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(1) }} />
+          <div style={ styles.portfolioItemContainer }>
+            <img src={ ibcuPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(1) }} />
+          </div>
 
-          <button onClick={() => { this._goToProjectPage(2) }} style={ styles.portfolioItem }>
-            Dodge It! Car!
-          </button>
-          <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(3) } }>
-            BoxSword
-          </button>
-          <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(4) } }>
-            2D Fighter
-          </button>
+          <div style={ styles.portfolioItemContainer }>
+            <button onClick={() => { this._goToProjectPage(2) }} style={ styles.portfolioItem }>
+              Dodge It! Car!
+            </button>
+          </div>
+
+          <div style={ styles.portfolioItemContainer }>
+            <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(3) } }>
+              BoxSword
+            </button>
+          </div>
+
+          <div style={ styles.portfolioItemContainer }>
+            <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(4) } }>
+              2D Fighter
+            </button>
+          </div>
         </div>
       </div>
     </div>);
@@ -468,13 +484,18 @@ const styles = {
     borderRadius: 30,
     paddingBottom: '2%',
   },
+  portfolioItemContainer: {
+    width: '400px',
+    height: '250px',
+    marginTop: '2%',
+  },
   portfolioItem: {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    width: '400px',
-    height: '250px',
+    width: '100%',
+    height: '100%',
     fontSize: '2em',
     fontFamily: 'Avenir',
     backgroundColor: 'rgb(96,96,96,0.3)',
@@ -483,9 +504,33 @@ const styles = {
     textDecoration: 'none',
     textAlign: 'center',
     border: 'none',
-    marginTop: '2%',
     cursor: 'pointer',
+    position: 'relative',
   },
+  portfolioItemDescription: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    width: '400px',
+    height: '250px',
+    fontSize: '2em',
+    fontFamily: 'Avenir',
+    backgroundColor: 'rgb(0,0,0,0.65)',
+    wordWrap:'break-word',
+    color: 'white',
+    textDecoration: 'none',
+    textAlign: 'center',
+    border: 'none',
+    cursor: 'pointer',
+    position: 'absolute',
+    zIndex: '2',
+    fontFamily: 'Helvetica',
+  },
+  portfolioItemSubTitle: {
+    fontSize: '.5em',
+    marginTop: '5%',
+  }
 };
 
 const mapStateToProps = (state, ownProps) => {
