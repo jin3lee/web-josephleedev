@@ -37,6 +37,8 @@ import fighter4 from './assets/game-fighter-4.png';
 import { PAGE_ID_HOME, PAGE_ID_PROJECT_DETAIL } from './redux/actionTypes'
 import { updatePage, updateProjectId } from './redux/actions.js';
 
+import HoverCard from './container/HoverCard.js';
+
 class App extends React.Component {
 
   constructor( props ) {
@@ -185,15 +187,11 @@ class App extends React.Component {
                     }}>
 
           <div style={ styles.portfolioItemContainer }>
-            <div style={ styles.portfolioItemDescription }>
-              <div>LegacyGames.com</div>
-              <div style={ styles.portfolioItemSubTitle }>Wordpress</div>
-            </div>
-            <img src={ lgPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(5) }} />
+            <HoverCard image={ lgPortfolioItem } title={ "Legacy Games" } subtitle={ "Wordpress Ecommerce Site" } portfolioId={0} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <img src={ ibcuPortfolioItem } style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(1) }} />
+            <HoverCard image={ ibcuPortfolioItem } title={ "International Bible College & University" } subtitle={ "React & AWS S3 Website" } portfolioId={0} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
@@ -441,7 +439,8 @@ class App extends React.Component {
       pageId = this.props.pageId;
     }
 
-    console.log("projectId: " + this.props.projectId);
+    console.log( "projectId: " + this.props.projectId );
+
     return (
         <div style={ styles.container }>
         { ( PAGE_ID_HOME === pageId ) && ( -1 === this.props.projectId ) && this._pageHome() }
