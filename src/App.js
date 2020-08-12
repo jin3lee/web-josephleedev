@@ -8,6 +8,8 @@ import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
 import ibcuPortfolioItem from './assets/web_ibcu_portfolioItem.jpg'
 import fidgetPortfolioItem from './assets/android_fidget_portfolioItem.jpg'
 import dodgetItCarPortfolioItem from './assets/android_dodgeitcar_portfolioItem.jpg'
+import boxswordPortfolioItem from './assets/gms_boxsword_portfolioItem.jpg'
+import windowsPortfolioItem from './assets/background_windows.jpg'
 
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
@@ -205,11 +207,11 @@ class App extends React.Component {
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ ibcuPortfolioItem } title={ "BoxSword" } subtitle={ "GameMakerStudio Game" } portfolioId={0} />
+            <HoverCard image={ boxswordPortfolioItem } title={ "BoxSword" } subtitle={ "Desktop Game" } portfolioId={0} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ ibcuPortfolioItem } title={ "2D Fighter Demo" } subtitle={ "Unity Game" } portfolioId={0} />
+            <HoverCard image={ windowsPortfolioItem } title={ "2D Fighter Demo" } subtitle={ "Unity Game" } portfolioId={0} />
           </div>
         </div>
       </div>
