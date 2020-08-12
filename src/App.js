@@ -78,7 +78,7 @@ class App extends React.Component {
   _stickyHeader() {
     return (
       <div style={{
-        position: 'fixed',
+        position: 'absolute',
         backgroundColor: 'rgb(0,0,0,0)',
         width: '100%',
         display: 'flex',
@@ -211,7 +211,7 @@ class App extends React.Component {
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ windowsPortfolioItem } title={ "2D Fighter Demo" } subtitle={ "Unity Game" } portfolioId={0} />
+            <HoverCard image={ windowsPortfolioItem } title={ "2D Fighter Demo" } subtitle={ "Desktop Game" } portfolioId={0} />
           </div>
         </div>
       </div>
