@@ -1,15 +1,20 @@
 import React from "react";
 
+import { connect } from 'react-redux';
+import { updatePage, updateProjectId } from './../redux/actions.js';
+
 class HoverCard extends React.Component {
 
   constructor( props ) {
     super( props );
     this.state = {
       isHover: false,
+      portfolioId: -1,
     }
     this._updateIsHover = this._updateIsHover.bind(this);
     this._updateOnMouseOver = this._updateOnMouseOver.bind(this);
     this._updateOnMouseLeave = this._updateOnMouseLeave.bind(this);
+    this._onMouseClick = this._onMouseClick.bind(this);
   }
 
   _updateIsHover( isHover ) {
@@ -21,8 +26,17 @@ class HoverCard extends React.Component {
   _updateOnMouseLeave() {
     this._updateIsHover( false );
   }
+  _onMouseClick() {
+    this.props.dispatch( updateProjectId( this.state.portfolioId ) );
+    window.scrollTo(0, 0);
+  }
 
   render() {
+    if( this.state.portfolioId !== this.props.portfolioId ) {
+      this.state.portfolioId = this.props.portfolioId;
+    }
+
+
     return(
       <div onMouseLeave={ ()=>{ this._updateOnMouseLeave() }} onMouseOver={ () => { this._updateOnMouseOver() }} style={ styles.container }>
 
@@ -30,10 +44,10 @@ class HoverCard extends React.Component {
           this.state.isHover
           &&
           (
-            <div style={ styles.hoverCardDescription }>
+            <button onClick={ this._onMouseClick } style={ styles.hoverCardDescription }>
               <div style={{ width: '90%' }}>{ this.props.title }</div>
               <div style={ styles.hoverCardSubTitle }>{ this.props.subtitle }</div>
-            </div>
+            </button>
           )
         }
 
@@ -87,4 +101,10 @@ const styles = {
   },
 }
 
-export default HoverCard;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    pageId: state.reducer.pageId,
+  };
+};
+
+export default connect( mapStateToProps )( HoverCard );

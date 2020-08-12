@@ -192,27 +192,27 @@ class App extends React.Component {
                     }}>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ lgPortfolioItem } title={ "Legacy Games" } subtitle={ "Wordpress Ecommerce Site" } portfolioId={0} />
+            <HoverCard image={ lgPortfolioItem } title={ "Legacy Games" } subtitle={ "Wordpress Ecommerce Site" } portfolioId={1} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ ibcuPortfolioItem } title={ "International Bible College & University" } subtitle={ "React & AWS S3 Website" } portfolioId={0} />
+            <HoverCard image={ ibcuPortfolioItem } title={ "International Bible College & University" } subtitle={ "React & AWS S3 Website" } portfolioId={2} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ dodgetItCarPortfolioItem } title={ "Dodge it! Car!" } subtitle={ "Android Game" } portfolioId={0} />
+            <HoverCard image={ dodgetItCarPortfolioItem } title={ "Dodge it! Car!" } subtitle={ "Android Game" } portfolioId={3} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ fidgetPortfolioItem } title={ "Fidget Spinner Collector" } subtitle={ "Android Game" } portfolioId={0} />
+            <HoverCard image={ fidgetPortfolioItem } title={ "Fidget Spinner Collector" } subtitle={ "Android Game" } portfolioId={4} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ boxswordPortfolioItem } title={ "BoxSword" } subtitle={ "Desktop Game" } portfolioId={0} />
+            <HoverCard image={ boxswordPortfolioItem } title={ "BoxSword" } subtitle={ "Desktop Game" } portfolioId={5} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ fighterDemoPortfolioItem } title={ "Fighter Demo" } subtitle={ "Desktop Game" } portfolioId={0} />
+            <HoverCard image={ fighterDemoPortfolioItem } title={ "Fighter Demo" } subtitle={ "Desktop Game" } portfolioId={6} />
           </div>
         </div>
       </div>
@@ -272,6 +272,27 @@ class App extends React.Component {
       {
         id: 1,
         appType: 'web',
+        title: "Legacy Games wanted a nice looking website to sell digital products using wordpress & woocommerce. The following is how I was able to deliver their needs.",
+        link: 'https://www.legacygames.com',
+        description1: 'Ecommerce Webstie',
+        description2: 'Implement javascript functionality',
+        description3: 'Connect payment processing using stripe & paypal',
+        description4: 'Built using wordpress and woocommerce',
+        year: 'Updated July 2020',
+        gallery:
+        [
+          { image: lgBoxshotsBefore, caption: 'The first opportunity to work on the website was to improve the product images. The images were not uniformal and doesn\'t convey a clear product message.' },
+          { image: lgBoxshotsAfter, caption: 'After discussing with the team, we decided to go with an image that depicts a 3D boxshot. We think transforming a flatten image into a 3D boxshot look we would be adding a sense tangibility, which would ease customers into conceptualizing what they are purchasing. I also added logos on the side of the boxes to increase branding on these products.' },
+          { image: lgBoxshotsDesign, caption: 'Next, the designer provided me the design of the single product page that the company wanted.' },
+          { image: lgBoxshotsDesignImplement, caption: 'After lots of coding, drinking tea, and back and forth emails of design details the designs were finally implemented.' },
+          { image: lgSortingButtonCloseUp, caption: 'Another fun challenge was implmenting buttons that would sort html elements called flipcards. These flipcards are great interfaces for customers to view our product image and read more about the product.' },
+          { image: lgSortingButton, caption: 'The biggest part for implementing this sorting algorithm was parsing through many layers of html and identifying which flipcard corresponded to which product. From that point, I created a map that linked products to product data that contains the products name and date. With these I was able to sort by NEW or Alphabetical order.' },
+        ],
+        result: 'I learned wordpress with woocomerce plugin is a very friendly way of building a ecommerce site, because of the extensibility of adding plugins that can add ecommerce technology. Some of these technologies I setup were: Stripe credit card payment processing, paypal payment processing, taxing based on state, storing backups of the whole site, & adding custom code using snippets. These plugins are the tip of the iceberg. There are plenty of more plugins that will allow the site to add other technologies.',
+      },
+      {
+        id: 2,
+        appType: 'web',
         title: "A client asked me to build him a school website and since I never made a school website I thought why not?!",
         link: 'https://www.ibcuni.com',
         description1: 'College Webstie',
@@ -292,7 +313,7 @@ class App extends React.Component {
         result: 'I learned designing for both web and mobile is important because without a sound design the web page can look unpolished on one platform compared to the other. I wish I could\'ve known to start designing with percentage applied to styles like \'padding\' & \'margins\'; as these ended up giving me great multiplatform results.',
       },
       {
-        id: 2,
+        id: 3,
         appType: 'android',
         title: "My friend and I wanted to build a mobile game over the weekend and ended up designing, programming, & publishing to the android play store after 3 days & little sleep",
         link: 'https://play.google.com/store/apps/details?id=com.byebyegames.dodgeitcar',
@@ -310,7 +331,25 @@ class App extends React.Component {
         result: 'As young college students we came into this project not knowing much about game making, but through this project we learned that there are many complexities & difficulties of creating a simple game. We learned how to design assets to match pixel perfect, program game state logic, and publish with a developer account onto the Google Play store. We ended up getting around 150+ downloads.',
       },
       {
-        id: 3,
+        id: 4,
+        appType: 'android',
+        title: "My friend and I wanted to build a mobile game over the weekend and ended up designing, programming, & publishing to the android play store after 3 days & little sleep",
+        link: 'https://play.google.com/store/apps/details?id=com.byebyegames.dodgeitcar',
+        description1: 'Android Game',
+        description2: 'UX/UI design',
+        description3: 'Sprite asset design',
+        description4: 'Publish to appstore',
+        year: 'Updated 2015',
+        gallery:
+        [
+          { image: dodgeFeature, caption: 'We chose to go with a simple 2D game where the player dodges cars as a race car driver - here is the featured graphic displayed in the play store' },
+          { image: dodgeScreens, caption: 'We wanted the game to be simple and gave the player two instructions' },
+          { image: dodgeSpritesheet, caption: 'With little art experience, we were able to manage 9 images + a few sound affects into an entire game' }
+        ],
+        result: 'As young college students we came into this project not knowing much about game making, but through this project we learned that there are many complexities & difficulties of creating a simple game. We learned how to design assets to match pixel perfect, program game state logic, and publish with a developer account onto the Google Play store. We ended up getting around 150+ downloads.',
+      },
+      {
+        id: 5,
         appType: '2D Game',
         title: "I have been wanting to develop a game using GameMakerStudio2 and currently came of with this concept of a box fighting with a sword",
         link: 'https://www.boxsword.com',
@@ -327,7 +366,7 @@ class App extends React.Component {
         result: 'The works of this game is still in the making... to be continued...',
       },
       {
-        id: 4,
+        id: 6,
         appType: '2D Game',
         title: "My friend John wanted to build a fighter game with me and I said \"Let's do it!\"",
         link: 'https://drive.google.com/drive/folders/1wZchLIwC5MpXkDlO44ZVM3ViA9lH_oDW?usp=sharing',
@@ -344,27 +383,6 @@ class App extends React.Component {
           { image: fighter4 , caption: 'Here you can see the hurt box(red) that would do damage when colliding with the opposing player\'s hit box(green)' }
         ],
         result: 'I learned developing a fighter game containing hitbox/hurtbox logic to be debug heavy type of development. There was a lot of instances where our programming logic didn\'t work as inteded and we had to keep digging and digging for where the bugs truly lied. Keeping track of player state and timing hit/hurt box collisions was no easy feat. We never published the game to any store, but our friends who were able to try out the game thought it was pretty cool.',
-      },
-      {
-        id: 5,
-        appType: 'web',
-        title: "Legacy Games wanted a nice looking website to sell digital products using wordpress & woocommerce. The following is how I was able to deliver their needs.",
-        link: 'https://www.legacygames.com',
-        description1: 'Ecommerce Webstie',
-        description2: 'Implement javascript functionality',
-        description3: 'Connect payment processing using stripe & paypal',
-        description4: 'Built using wordpress and woocommerce',
-        year: 'Updated July 2020',
-        gallery:
-        [
-          { image: lgBoxshotsBefore, caption: 'The first opportunity to work on the website was to improve the product images. The images were not uniformal and doesn\'t convey a clear product message.' },
-          { image: lgBoxshotsAfter, caption: 'After discussing with the team, we decided to go with an image that depicts a 3D boxshot. We think transforming a flatten image into a 3D boxshot look we would be adding a sense tangibility, which would ease customers into conceptualizing what they are purchasing. I also added logos on the side of the boxes to increase branding on these products.' },
-          { image: lgBoxshotsDesign, caption: 'Next, the designer provided me the design of the single product page that the company wanted.' },
-          { image: lgBoxshotsDesignImplement, caption: 'After lots of coding, drinking tea, and back and forth emails of design details the designs were finally implemented.' },
-          { image: lgSortingButtonCloseUp, caption: 'Another fun challenge was implmenting buttons that would sort html elements called flipcards. These flipcards are great interfaces for customers to view our product image and read more about the product.' },
-          { image: lgSortingButton, caption: 'The biggest part for implementing this sorting algorithm was parsing through many layers of html and identifying which flipcard corresponded to which product. From that point, I created a map that linked products to product data that contains the products name and date. With these I was able to sort by NEW or Alphabetical order.' },
-        ],
-        result: 'I learned wordpress with woocomerce plugin is a very friendly way of building a ecommerce site, because of the extensibility of adding plugins that can add ecommerce technology. Some of these technologies I setup were: Stripe credit card payment processing, paypal payment processing, taxing based on state, storing backups of the whole site, & adding custom code using snippets. These plugins are the tip of the iceberg. There are plenty of more plugins that will allow the site to add other technologies.',
       },
     ];
 
@@ -425,7 +443,8 @@ class App extends React.Component {
                     color: 'white',
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize: '3em'
+                    fontSize: '3em',
+                    alignItems: 'center'
                   }}>
                     Next Project ⟼
                   </button>
@@ -441,8 +460,6 @@ class App extends React.Component {
     if( pageId !== this.props.pageId ) {
       pageId = this.props.pageId;
     }
-
-    console.log( "projectId: " + this.props.projectId );
 
     return (
         <div style={ styles.container }>
