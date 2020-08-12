@@ -13,7 +13,6 @@ class HoverCard extends React.Component {
   }
 
   _updateIsHover( isHover ) {
-    console.log('_updateIsHover', isHover);
     this.setState({ isHover: isHover });
   }
 
@@ -59,7 +58,6 @@ const styles = {
     width: '400px',
     height: '250px',
     borderColor: 'rgba(0,0,0,0)',
-    backgroundColor: 'red',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
