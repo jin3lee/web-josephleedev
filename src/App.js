@@ -6,6 +6,7 @@ import logoJl from './assets/logo_jl_final.svg';
 
 import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
 import ibcuPortfolioItem from './assets/web_ibcu_portfolioItem.jpg'
+import fidgetPortfolioItem from './assets/android_fidget_portfolioItem.jpg'
 
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
@@ -195,21 +196,19 @@ class App extends React.Component {
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <button onClick={() => { this._goToProjectPage(2) }} style={ styles.portfolioItem }>
-              Dodge It! Car!
-            </button>
+            <HoverCard image={ ibcuPortfolioItem } title={ "Dodge it! Car!" } subtitle={ "Android Game" } portfolioId={0} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(3) } }>
-              BoxSword
-            </button>
+            <HoverCard image={ fidgetPortfolioItem } title={ "Fidget Spinner Collector" } subtitle={ "Android Game" } portfolioId={0} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <button style={ styles.portfolioItem } onClick={ () => { this._goToProjectPage(4) } }>
-              2D Fighter
-            </button>
+            <HoverCard image={ ibcuPortfolioItem } title={ "BoxSword" } subtitle={ "GameMakerStudio Game" } portfolioId={0} />
+          </div>
+
+          <div style={ styles.portfolioItemContainer }>
+            <HoverCard image={ ibcuPortfolioItem } title={ "2D Fighter Demo" } subtitle={ "Unity Game" } portfolioId={0} />
           </div>
         </div>
       </div>

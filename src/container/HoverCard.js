@@ -15,7 +15,6 @@ class HoverCard extends React.Component {
   _updateIsHover( isHover ) {
     this.setState({ isHover: isHover });
   }
-
   _updateOnMouseOver() {
     this._updateIsHover( true );
   }
@@ -25,7 +24,7 @@ class HoverCard extends React.Component {
 
   render() {
     return(
-      <div onMouseLeave={()=>{ this._updateOnMouseLeave() }} onMouseOver={() => { this._updateOnMouseOver() }} style={ styles.container }>
+      <div onMouseLeave={ ()=>{ this._updateOnMouseLeave() }} onMouseOver={ () => { this._updateOnMouseOver() }} style={ styles.container }>
 
         {
           this.state.isHover
