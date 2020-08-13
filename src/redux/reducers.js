@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import { PAGE_ID_HOME, PAGE_ID_PROJECT_DETAIL, UPDATE_PAGE, UPDATE_PROJECT_ID } from "./actionTypes";
+import { PAGE_ID_HOME, UPDATE_PAGE, UPDATE_PROJECT_ID } from "./actionTypes";
 
 const initialState = {
 	pageId: PAGE_ID_HOME,

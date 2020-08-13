@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from 'react-redux';
-import { updatePage, updateProjectId } from './../redux/actions.js';
+import { updateProjectId } from './../redux/actions.js';
 
 class HoverCard extends React.Component {
 
@@ -16,26 +16,30 @@ class HoverCard extends React.Component {
     this._updateOnMouseLeave = this._updateOnMouseLeave.bind(this);
     this._onMouseClick = this._onMouseClick.bind(this);
   }
+  componentDidMount() {
+      if( this.state.portfolioId !== this.props.portfolioId ) {
+          this.setState({ portfolioId: this.props.portfolioId });
+      }
+  }
 
   _updateIsHover( isHover ) {
     this.setState({ isHover: isHover });
   }
+
   _updateOnMouseOver() {
     this._updateIsHover( true );
   }
+
   _updateOnMouseLeave() {
     this._updateIsHover( false );
   }
+
   _onMouseClick() {
     this.props.dispatch( updateProjectId( this.state.portfolioId ) );
     window.scrollTo(0, 0);
   }
 
   render() {
-    if( this.state.portfolioId !== this.props.portfolioId ) {
-      this.state.portfolioId = this.props.portfolioId;
-    }
-
 
     return(
       <div onMouseLeave={ ()=>{ this._updateOnMouseLeave() }} onMouseOver={ () => { this._updateOnMouseOver() }} style={ styles.container }>
@@ -51,7 +55,7 @@ class HoverCard extends React.Component {
           )
         }
 
-        <img src={ this.props.image } style={ styles.buttonHoverStyle }>
+        <img alt="hoverButton" src={ this.props.image } style={ styles.buttonHoverStyle }>
         </img>
 
       </div>
@@ -87,7 +91,6 @@ const styles = {
     width: '400px',
     height: '250px',
     fontSize: '2em',
-    fontFamily: 'Avenir',
     backgroundColor: 'rgb(0,0,0,0.8)',
     wordWrap:'break-word',
     color: 'white',

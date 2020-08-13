@@ -10,7 +10,6 @@ import fidgetPortfolioItem from './assets/android_fidget_portfolioItem.jpg'
 import dodgetItCarPortfolioItem from './assets/android_dodgeitcar_portfolioItem.jpg'
 import boxswordPortfolioItem from './assets/gms_boxsword_portfolioItem.jpg'
 import fighterDemoPortfolioItem from './assets/unity_fighterDemo_portfolioItem.jpg'
-import windowsPortfolioItem from './assets/background_windows.jpg'
 
 import lgBoxshotsBefore from './assets/web_lg_boxshotBefore.png';
 import lgBoxshotsAfter from './assets/web_lg_boxshotAfter.png';
@@ -43,7 +42,7 @@ import fighter2 from './assets/game-fighter-2.png';
 import fighter3 from './assets/game-fighter-3.png';
 import fighter4 from './assets/game-fighter-4.png';
 
-import { PAGE_ID_HOME, PAGE_ID_PROJECT_DETAIL } from './redux/actionTypes'
+import { PAGE_ID_HOME } from './redux/actionTypes'
 import { updatePage, updateProjectId } from './redux/actions.js';
 
 import HoverCard from './container/HoverCard.js';
@@ -271,9 +270,9 @@ class App extends React.Component {
 
   _renderProjectDetailGallery( gallery ) {
     return gallery.map(art => (
-      <div>
+      <div key={ art.key }>
         <div style={ this._getProjectSubtitleStyle() }>{ art.caption }</div>
-        <img src={ art.image } style={{ width: '100%', marginBottom: '10%', boxShadow: '10px 10px 10px rgb(0,0,0,0.5)' }}/>
+        <img alt="projectImage" src={ art.image } style={{ width: '100%', marginBottom: '10%', boxShadow: '10px 10px 10px rgb(0,0,0,0.5)' }}/>
       </div>
     ));
   }
@@ -373,6 +372,7 @@ class App extends React.Component {
 
     const projectDetail = [
       {
+        key: 'Legacy Games Project',
         id: 1,
         appType: 'web',
         title: "Legacy Games wanted a nice looking website to sell digital products using wordpress & woocommerce. The following is how I was able to deliver their needs.",
@@ -394,6 +394,7 @@ class App extends React.Component {
         result: 'I learned wordpress with woocomerce plugin is a very friendly way of building a ecommerce site, because of the extensibility of adding plugins that can add ecommerce technology. Some of these technologies I setup were: Stripe credit card payment processing, paypal payment processing, taxing based on state, storing backups of the whole site, & adding custom code using snippets. These plugins are the tip of the iceberg. There are plenty of more plugins that will allow the site to add other technologies.',
       },
       {
+        key: 'IBCUNI Project',
         id: 2,
         appType: 'web',
         title: "A client asked me to build him a school website and since I never made a school website I thought why not?!",
@@ -409,13 +410,14 @@ class App extends React.Component {
           { image: ibcuLogoAndTitle, caption: 'Here is the logo and name of the school' },
           { image: ibcuHome, caption: 'After looking at many school websites I chose to base my design off of washington.edu, because it was simple and something I knew I could build quickly' },
           { image: ibcuAcademics, caption: 'I wanted to have a decent mobile experience, so I decided to center left the body\'s content' },
-          { image: ibcuApply, caption: 'For the application page, I decided to display an image that captured the beautiful nature around the school - because many of the students who would be applying come from all parts of the world that have different climate and I thought "why not show them what this school\'s climate and scenery is like?\"' },
+          { image: ibcuApply, caption: 'For the application page, I decided to display an image that captured the beautiful nature around the school - because many of the students who would be applying come from all parts of the world that have different climate and I thought "why not show them what this school\'s climate and scenery is like?' },
           { image: ibcuCampus, caption: 'I designed the campus page to be as straightforward as possible' },
           { image: ibcuFacultyAndStaff, caption: 'This page was tricky because the images of all the staff were not uniformal - so I photoshopped the images to have a circular frame and changed the colors to black and white instead' }
         ],
         result: 'I learned designing for both web and mobile is important because without a sound design the web page can look unpolished on one platform compared to the other. I wish I could\'ve known to start designing with percentage applied to styles like \'padding\' & \'margins\'; as these ended up giving me great multiplatform results.',
       },
       {
+        key: 'Dodge it! Car! Project',
         id: 3,
         appType: 'android',
         title: "My friend and I wanted to build a mobile game over the weekend and ended up designing, programming, & publishing to the android play store after 3 days & little sleep",
@@ -434,6 +436,7 @@ class App extends React.Component {
         result: 'As young college students we came into this project not knowing much about game making, but through this project we learned that there are many complexities & difficulties of creating a simple game. We learned how to design assets to match pixel perfect, program game state logic, and publish with a developer account onto the Google Play store. We ended up getting around 150+ downloads.',
       },
       {
+        key: 'Fidget Spinner Collector Project',
         id: 4,
         appType: 'android',
         title: "My coworker and I made a fun fidget spinner android app!",
@@ -452,6 +455,7 @@ class App extends React.Component {
         result: 'Overall, the app got over a 100+ downloads before it was removed from the store.',
       },
       {
+        key: 'BoxSword Project',
         id: 5,
         appType: 'Desktop Game',
         title: "I have been wanting to develop a game using GameMakerStudio2 and currently came up with this concept of a box fighting with a sword",
@@ -469,6 +473,7 @@ class App extends React.Component {
         result: 'The works of this game is still in the making... to be continued...',
       },
       {
+        key: 'Fighter Demo Project',
         id: 6,
         appType: 'Desktop Game',
         title: "My friend John wanted to build a fighter game with me and I said \"Let's do it!\"",
@@ -564,8 +569,6 @@ class App extends React.Component {
       pageId = this.props.pageId;
     }
 
-    console.log("width: ", this.state.width);
-
     return (
         <div style={ styles.container }>
         { ( PAGE_ID_HOME === pageId ) && ( -1 === this.props.projectId ) && this._pageHome() }
@@ -639,7 +642,6 @@ const styles = {
     width: '400px',
     height: '250px',
     fontSize: '2em',
-    fontFamily: 'Avenir',
     backgroundColor: 'rgb(0,0,0,0.65)',
     wordWrap:'break-word',
     color: 'white',
