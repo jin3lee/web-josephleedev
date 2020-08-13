@@ -55,12 +55,31 @@ class App extends React.Component {
     this.state = {
       pageId: PAGE_ID_HOME,
       currentProjectId: -1,
+      width: -1,
+      height: -1,
     }
     document.body.style = 'background: white;';
     this._body = this._body.bind(this);
     this._stickyHeader = this._stickyHeader.bind(this);
     this._goToWebsite = this._goToWebsite.bind(this);
     this._updatePageTo = this._updatePageTo.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this._getProjectTitleStyle = this._getProjectTitleStyle.bind(this);
+    this._getProjectSubtitleStyle = this._getProjectSubtitleStyle.bind(this);
+    this._getProjectResultStyle = this._getProjectResultStyle.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   _goToProjectDetails( projectName ) {
@@ -110,12 +129,15 @@ class App extends React.Component {
           justifyContent: 'flex-end',
           marginRight: '4.5%',
         }}>
+        {/*
           <a href="#projects" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
             WORK
           </a>
           <a href="#aboutme" style={ { ...styles.spacesBetweenTabStyle, ...styles.tabColorStyle, ...styles.headerButtonStyle } } >
             ABOUT ME
           </a>
+          */
+        }
         </div>
       </div>
     );
@@ -250,21 +272,98 @@ class App extends React.Component {
   _renderProjectDetailGallery( gallery ) {
     return gallery.map(art => (
       <div>
-        <div style={{
-          color: 'gray',
-          justifyContent: 'center',
-          textAlign: 'center',
-          fontFamily: 'Avenir',
-          fontSize: '2em',
-          marginBottom: '5%',
-          marginTop: '10%',
-          paddingTop: '5%',
-          paddingBottom: '5%',
-          borderRadius: 20
-        }}>{ art.caption }</div>
+        <div style={ this._getProjectSubtitleStyle() }>{ art.caption }</div>
         <img src={ art.image } style={{ width: '100%', marginBottom: '10%', boxShadow: '10px 10px 10px rgb(0,0,0,0.5)' }}/>
       </div>
     ));
+  }
+
+  _getProjectTitleStyle() {
+
+    let projectTitleStyle = {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      fontSize: '5em',
+      marginTop: '10%',
+      marginBottom: '10%',
+    };
+
+    if( this.state.width  > 1280 ) {
+      projectTitleStyle.fontSize = '5em';
+    } else if( this.state.width  > 1000 ) {
+      projectTitleStyle.fontSize = '4em';
+    } else if( this.state.width  > 800 ) {
+      projectTitleStyle.fontSize = '3em';
+    } else if( this.state.width  > 600 ) {
+      projectTitleStyle.fontSize = '2em';
+    } else if( this.state.width  > 400 ) {
+      projectTitleStyle.fontSize = '2em';
+    } else {
+      projectTitleStyle.fontSize = '1em';
+    }
+
+    return ( projectTitleStyle );
+  }
+
+  _getProjectSubtitleStyle() {
+
+    let projectSubtitleStyle = {
+        color: 'gray',
+        justifyContent: 'center',
+        textAlign: 'center',
+        fontFamily: 'Avenir',
+        fontSize: '2em',
+        marginBottom: '5%',
+        marginTop: '10%',
+        paddingTop: '5%',
+        paddingBottom: '5%',
+        borderRadius: 20
+    };
+
+    if( this.state.width  > 1280 ) {
+      projectSubtitleStyle.fontSize = '3em';
+    } else if( this.state.width  > 1000 ) {
+      projectSubtitleStyle.fontSize = '2em';
+    } else if( this.state.width  > 800 ) {
+      projectSubtitleStyle.fontSize = '1em';
+    } else if( this.state.width  > 600 ) {
+      projectSubtitleStyle.fontSize = '.75em';
+    } else if( this.state.width  > 400 ) {
+      projectSubtitleStyle.fontSize = '.5em';
+    } else {
+      projectSubtitleStyle.fontSize = '.5em';
+    }
+
+    return ( projectSubtitleStyle );
+  }
+
+  _getProjectResultStyle() {
+
+    let projectSubtitleStyle = {
+      backgroundColor: 'gray',
+      padding: '10%',
+      color: 'white',
+      fontSize: '2em',
+      fontFamily: 'Avenir',
+      justifyContent: 'center',
+      textAlign: 'center'
+    };
+
+    if( this.state.width  > 1280 ) {
+      projectSubtitleStyle.fontSize = '3.5em';
+    } else if( this.state.width  > 1000 ) {
+      projectSubtitleStyle.fontSize = '2.5em';
+    } else if( this.state.width  > 800 ) {
+      projectSubtitleStyle.fontSize = '1.5em';
+    } else if( this.state.width  > 600 ) {
+      projectSubtitleStyle.fontSize = '1.25em';
+    } else if( this.state.width  > 400 ) {
+      projectSubtitleStyle.fontSize = '1.25em';
+    } else {
+      projectSubtitleStyle.fontSize = '1em';
+    }
+
+    return ( projectSubtitleStyle );
   }
 
   _pageProjectDetail( projectId ) {
@@ -355,7 +454,7 @@ class App extends React.Component {
       {
         id: 5,
         appType: 'Desktop Game',
-        title: "I have been wanting to develop a game using GameMakerStudio2 and currently came of with this concept of a box fighting with a sword",
+        title: "I have been wanting to develop a game using GameMakerStudio2 and currently came up with this concept of a box fighting with a sword",
         link: 'https://www.boxsword.com',
         description1: 'Computer Game',
         description2: 'Physics programming',
@@ -414,8 +513,8 @@ class App extends React.Component {
               <div style={{ flex: 9, marginLeft: '10%', marginRight: '10%', fontFamily: 'Avenir' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3%', fontSize: '.9em' }}>Project</div>
                 <div style={{ display: 'flex', justifyContent: 'center', fontSize: '.9em' }}>{ projectDetail[projectId].id } — { projectCount }</div>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', fontSize: '5em', marginTop: '10%', marginBottom: '10%' }}>{ projectDetail[projectId].title }</div>
-                <div style={{ display: 'flex', justifyContent: 'center', fontSize: '1.8em', marginLeft: '30%' }} onClick={ () => { this._goToWebsite("" + projectDetail[projectId].link) }}>View {projectDetail[projectId].appType} app ⟶</div>
+                <div style={ this._getProjectTitleStyle() }>{ projectDetail[projectId].title }</div>
+                <div style={{ display: 'flex', justifyContent: 'center', fontSize: '1.8em', marginLeft: '30%' }} onClick={ () => { this._goToWebsite("" + projectDetail[projectId].link) }}>View { projectDetail[projectId].appType } app ⟶</div>
                 <div style={{ display: 'flex', flexDirection: 'column', fontSize: '.7em', marginLeft:'58%', marginTop: '2%' }}>
                   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                     <div>{ projectDetail[projectId].description1 }</div>
@@ -430,7 +529,7 @@ class App extends React.Component {
                   { this._renderProjectDetailGallery( projectDetail[ projectId ].gallery ) }
                 </div>
 
-                <div style={{ backgroundColor: 'gray', padding: '10%', color: 'white', fontSize: '2em', fontFamily: 'Avenir', justifyContent: 'center', textAlign: 'center' }}>
+                <div style={ this._getProjectResultStyle() }>
                   { projectDetail[ projectId ].result }
                 </div>
 
@@ -441,13 +540,13 @@ class App extends React.Component {
                   onClick={ () => { this._goToProjectPage(projectId + 2) } }
                   style={{
                     width: '100%',
-                    height: '300px',
+                    height: '50px',
                     border: 'none',
                     backgroundColor: 'black',
                     color: 'white',
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize: '3em',
+                    fontSize: '1em',
                     alignItems: 'center'
                   }}>
                     Next Project ⟼
@@ -464,6 +563,8 @@ class App extends React.Component {
     if( pageId !== this.props.pageId ) {
       pageId = this.props.pageId;
     }
+
+    console.log("width: ", this.state.width);
 
     return (
         <div style={ styles.container }>
