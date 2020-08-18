@@ -440,7 +440,7 @@ class App extends React.Component {
         id: 4,
         appType: 'android',
         title: "My coworker and I made a fun fidget spinner android app!",
-        link: 'https://play.google.com/store/apps/details?id=com.byebyegames.dodgeitcar',
+        link: 'https://play.google.com/store/apps/details?id=com.fidget.androidgame',
         description1: 'Android Game',
         description2: 'UX/UI design',
         description3: 'Sprite asset design',
