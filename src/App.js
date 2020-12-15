@@ -5,7 +5,7 @@ import profilePhoto from './assets/facePhoto.jpg';
 import logoJl from './assets/logo_jl_final.svg';
 
 import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
-import ibcuPortfolioItem from './assets/web_ibcu_portfolioItem.jpg'
+import ibcuPortfolioItem from './assets/web_wimu_portfolioItem.png'
 import fidgetPortfolioItem from './assets/android_fidget_portfolioItem.jpg'
 import dodgetItCarPortfolioItem from './assets/android_dodgeitcar_portfolioItem.jpg'
 import boxswordPortfolioItem from './assets/gms_boxsword_portfolioItem.jpg'
@@ -221,7 +221,7 @@ class App extends React.Component {
           </div>
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ ibcuPortfolioItem } title={ "International Bible College & University" } subtitle={ "React & AWS S3 Website" } portfolioId={2} />
+            <HoverCard image={ ibcuPortfolioItem } title={ "Washington International Mission University" } subtitle={ "React & AWS S3 Website" } portfolioId={2} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
@@ -394,12 +394,12 @@ class App extends React.Component {
         result: 'I learned wordpress with woocomerce plugin is a very friendly way of building a ecommerce site, because of the extensibility of adding plugins that can add ecommerce technology. Some of these technologies I setup were: Stripe credit card payment processing, paypal payment processing, taxing based on state, storing backups of the whole site, & adding custom code using snippets. These plugins are the tip of the iceberg. There are plenty of more plugins that will allow the site to add other technologies.',
       },
       {
-        key: 'IBCUNI Project',
+        key: 'WIMUniversity.com',
         id: 2,
         appType: 'web',
         title: "A client asked me to build him a school website and since I never made a school website I thought why not?!",
-        link: 'https://www.ibcuni.com',
-        description1: 'College Webstie',
+        link: 'https://www.wimuniversity.com',
+        description1: 'University Webstie',
         description2: 'UX/UI design',
         description3: 'Hosting using AWS',
         description4: 'Built using React.js',
