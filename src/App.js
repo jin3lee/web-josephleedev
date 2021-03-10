@@ -219,7 +219,7 @@ class App extends React.Component {
 
 
           <div style={ styles.portfolioItemContainer }>
-            <HoverCard image={ mlPortfolioItem } title={ "Marquette Latshaw" } subtitle={ "Squarespace Portfolio" } portfolioId={1} />
+            <HoverCard image={ mlPortfolioItem } title={ "Marquette Latshaw" } subtitle={ "Squarespace Portfolio" } portfolioId={7} />
           </div>
 
           <div style={ styles.portfolioItemContainer }>
@@ -380,7 +380,7 @@ class App extends React.Component {
       {
         key: 'Legacy Games Project',
         id: 1,
-        appType: 'web',
+        appType: 'website',
         title: "Legacy Games wanted a nice looking website to sell digital products using wordpress & woocommerce. The following is how I was able to deliver their needs.",
         link: 'https://www.legacygames.com',
         description1: 'Ecommerce Webstie',
@@ -402,7 +402,7 @@ class App extends React.Component {
       {
         key: 'WIMUniversity.com',
         id: 2,
-        appType: 'web',
+        appType: 'website',
         title: "A client asked me to build him a school website and since I never made a school website I thought why not?!",
         link: 'https://www.wimuniversity.com',
         description1: 'University Webstie',
@@ -425,7 +425,7 @@ class App extends React.Component {
       {
         key: 'Dodge it! Car! Project',
         id: 3,
-        appType: 'android',
+        appType: 'android app',
         title: "My friend and I wanted to build a mobile game over the weekend and ended up designing, programming, & publishing to the android play store after 3 days & little sleep",
         link: 'https://play.google.com/store/apps/details?id=com.byebyegames.dodgeitcar',
         description1: 'Android Game',
@@ -444,7 +444,7 @@ class App extends React.Component {
       {
         key: 'Fidget Spinner Collector Project',
         id: 4,
-        appType: 'android',
+        appType: 'android app',
         title: "My coworker and I made a fun fidget spinner android app!",
         link: 'https://play.google.com/store/apps/details?id=com.fidget.androidgame',
         description1: 'Android Game',
@@ -463,7 +463,7 @@ class App extends React.Component {
       {
         key: 'BoxSword Project',
         id: 5,
-        appType: 'Desktop Game',
+        appType: 'desktop game',
         title: "I have been wanting to develop a game using GameMakerStudio2 and currently came up with this concept of a box fighting with a sword",
         link: 'https://www.boxsword.com',
         description1: 'Computer Game',
@@ -481,7 +481,7 @@ class App extends React.Component {
       {
         key: 'Fighter Demo Project',
         id: 6,
-        appType: 'Desktop Game',
+        appType: 'desktop game',
         title: "My friend John wanted to build a fighter game with me and I said \"Let's do it!\"",
         link: 'https://drive.google.com/drive/folders/1wZchLIwC5MpXkDlO44ZVM3ViA9lH_oDW?usp=sharing',
         description1: 'Computer Game for Mac & PC',
@@ -489,6 +489,26 @@ class App extends React.Component {
         description3: 'Physics and Game Programming',
         description4: 'Utilitze Github & Scrum',
         year: 'Updated Nov 2019',
+        gallery:
+        [
+          { image: fighter1, caption: 'We decided to use street fighter sprites and images that were already available on the internet' } ,
+          { image: fighter2, caption: 'After a few brain storm sessions and trial and errors we ended up having a few collision boxes and polygon - the polygon is important as you can see in the image below, because with this simple shape we were able to easily implement player to player collision from all angles.' } ,
+          { image: fighter3, caption: 'We added sprite animation for punching and kicking - on top of those animations we placed hurt/hit boxes' } ,
+          { image: fighter4 , caption: 'Here you can see the hurt box(red) that would do damage when colliding with the opposing player\'s hit box(green)' }
+        ],
+        result: 'I learned developing a fighter game containing hitbox/hurtbox logic to be debug heavy type of development. There was a lot of instances where our programming logic didn\'t work as inteded and we had to keep digging and digging for where the bugs truly lied. Keeping track of player state and timing hit/hurt box collisions was no easy feat. We never published the game to any store, but our friends who were able to try out the game thought it was pretty cool.',
+      },
+      {
+        key: 'Marquette Latshaw Squarespace Project',
+        id: 7,
+        appType: 'website',
+        title: "My friend James asked if I'd like to help one of his clients with building out a site from scratch. After talking with this wonderful client we were able to build a site real quick and launch it for her business to be shown.",
+        link: 'https://drive.google.com/drive/folders/1wZchLIwC5MpXkDlO44ZVM3ViA9lH_oDW?usp=sharing',
+        description1: 'Squarespace website',
+        description2: 'Design Site',
+        description3: 'Showcase Art',
+        description4: 'Freelance Job',
+        year: 'Updated Feb 2021',
         gallery:
         [
           { image: fighter1, caption: 'We decided to use street fighter sprites and images that were already available on the internet' } ,
@@ -525,7 +545,7 @@ class App extends React.Component {
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3%', fontSize: '.9em' }}>Project</div>
                 <div style={{ display: 'flex', justifyContent: 'center', fontSize: '.9em' }}>{ projectDetail[projectId].id } — { projectCount }</div>
                 <div style={ this._getProjectTitleStyle() }>{ projectDetail[projectId].title }</div>
-                <div style={{ display: 'flex', justifyContent: 'center', fontSize: '1.8em', marginLeft: '30%' }} onClick={ () => { this._goToWebsite("" + projectDetail[projectId].link) }}>View { projectDetail[projectId].appType } app ⟶</div>
+                <div style={{ display: 'flex', justifyContent: 'center', fontSize: '1.8em', marginLeft: '30%' }} onClick={ () => { this._goToWebsite("" + projectDetail[projectId].link) }}>View { projectDetail[projectId].appType } ⟶</div>
                 <div style={{ display: 'flex', flexDirection: 'column', fontSize: '.7em', marginLeft:'58%', marginTop: '2%' }}>
                   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                     <div>{ projectDetail[projectId].description1 }</div>
