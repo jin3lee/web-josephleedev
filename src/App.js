@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import profilePhoto from './assets/facePhoto.jpg';
 import logoJl from './assets/logo_jl_final.svg';
 
+import mlPortfolioItem from './assets/web_ml_portfolioItem.jpg'
 import lgPortfolioItem from './assets/web_lg_portfolioItem.jpg'
 import ibcuPortfolioItem from './assets/web_wimu_portfolioItem.png'
 import fidgetPortfolioItem from './assets/android_fidget_portfolioItem.jpg'
@@ -215,6 +216,11 @@ class App extends React.Component {
         <div style={{ paddingBottom: '10%', paddingTop: '5%',
                       display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-evenly'
                     }}>
+
+
+          <div style={ styles.portfolioItemContainer }>
+            <HoverCard image={ mlPortfolioItem } title={ "Marquette Latshaw" } subtitle={ "Squarespace Portfolio" } portfolioId={1} />
+          </div>
 
           <div style={ styles.portfolioItemContainer }>
             <HoverCard image={ lgPortfolioItem } title={ "Legacy Games" } subtitle={ "Wordpress Ecommerce Site" } portfolioId={1} />
