@@ -43,6 +43,10 @@ import fighter2 from './assets/game-fighter-2.png';
 import fighter3 from './assets/game-fighter-3.png';
 import fighter4 from './assets/game-fighter-4.png';
 
+import web_ml_bHeader from './assets/web_ml_bHeader.png';
+import web_ml_mHeader from './assets/web_ml_mHeader.png';
+import web_ml_bGallery from './assets/web_ml_bGallery.png';
+
 import { PAGE_ID_HOME } from './redux/actionTypes'
 import { updatePage, updateProjectId } from './redux/actions.js';
 
@@ -487,7 +491,7 @@ class App extends React.Component {
         description1: 'Computer Game for Mac & PC',
         description2: 'Unity2D Game Editor',
         description3: 'Physics and Game Programming',
-        description4: 'Utilitze Github & Scrum',
+        description4: 'Utilize Github & Scrum',
         year: 'Updated Nov 2019',
         gallery:
         [
@@ -502,19 +506,20 @@ class App extends React.Component {
         key: 'Marquette Latshaw Squarespace Project',
         id: 7,
         appType: 'website',
-        title: "My friend James asked if I'd like to help one of his clients with building out a site from scratch. After talking with this wonderful client we were able to build a site real quick and launch it for her business to be shown.",
-        link: 'https://drive.google.com/drive/folders/1wZchLIwC5MpXkDlO44ZVM3ViA9lH_oDW?usp=sharing',
-        description1: 'Squarespace website',
+        title: "Marquette Latshaw, an artist with a growing small business, was in need of a simple website that provides her contact info and showcases her artwork. I talked with her briefly and we decided to use squarespace and utilize a template that bests meets her requirements.",
+        link: 'https://www.marquettelatshaw.com',
+        description1: 'Squarespace',
         description2: 'Design Site',
         description3: 'Showcase Art',
         description4: 'Freelance Job',
         year: 'Updated Feb 2021',
         gallery:
         [
-          { image: fighter1, caption: 'We decided to use street fighter sprites and images that were already available on the internet' } ,
-          { image: fighter2, caption: 'After a few brain storm sessions and trial and errors we ended up having a few collision boxes and polygon - the polygon is important as you can see in the image below, because with this simple shape we were able to easily implement player to player collision from all angles.' } ,
-          { image: fighter3, caption: 'We added sprite animation for punching and kicking - on top of those animations we placed hurt/hit boxes' } ,
-          { image: fighter4 , caption: 'Here you can see the hurt box(red) that would do damage when colliding with the opposing player\'s hit box(green)' }
+          { image: web_ml_bGallery, caption: 'The first step that I took was to think about how I would ground the website design off of. The philosophy that I came up with was "how to design in order to sell art?" The design theory that I use to approach this philosophical question is "I can sell art on a website IF I show the beauty of the art piece and develop a strong branding." So, I decided to place Marquette\'s butterfly paintings as the first thing visitors will see the moment they visit her website!' } ,
+          { image: web_ml_mHeader, caption: 'Gallery Page.' } ,
+          { image: fighter2, caption: 'About Page.' } ,
+          { image: fighter3, caption: 'Contact Page.' } ,
+          { image: fighter3, caption: 'Footer.' } ,
         ],
         result: 'I learned developing a fighter game containing hitbox/hurtbox logic to be debug heavy type of development. There was a lot of instances where our programming logic didn\'t work as inteded and we had to keep digging and digging for where the bugs truly lied. Keeping track of player state and timing hit/hurt box collisions was no easy feat. We never published the game to any store, but our friends who were able to try out the game thought it was pretty cool.',
       },
